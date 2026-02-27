@@ -200,6 +200,35 @@
             text-decoration: underline;
         }
 
+        .setlist-wrap {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .setlist-list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .setlist-list li {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: #c9d1d9;
+        }
+
+        .setlist-embed {
+            width: 100%;
+            min-height: 352px;
+            border: 0;
+            border-radius: 10px;
+        }
+
         @media (max-width: 768px) {
             .hero {
                 grid-template-columns: 1fr;
@@ -231,6 +260,10 @@
 
             .member-card[open] .member-content {
                 display: block;
+            }
+
+            .setlist-wrap {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -317,6 +350,48 @@
                     <p>Razor’s Cry, let’s go! 🎸🤘</p>
                 </div>
             </details>
+        </section>
+
+        <section class="panel" aria-label="Setlist">
+            <h2>Setlist</h2>
+            <div class="setlist-wrap">
+                <div>
+                    <ul class="setlist-list">
+                        <li>Lonely Boy — The Black Keys</li>
+                        <li>Hard To Handle — The Black Crowes</li>
+                        <li>BLOW — Ed Sheeran, Chris Stapleton, Bruno Mars</li>
+                        <li>Lola Montez — Volbeat</li>
+                        <li>Walk — Foo Fighters</li>
+                        <li>Is It — Triggafinger</li>
+                        <li>American Woman — Lenny Kravitz</li>
+                        <li>Fly Away — Lenny Kravitz</li>
+                        <li>Twilight Zone — Golden Earring</li>
+                        <li>Never Let Me Down Again (Live at Rose Bowl, Pasadena, CA - June 18, 1988) — Depeche Mode</li>
+                        <li>Let Me Out — Electric Mary</li>
+                        <li>Fight For Your Right — Beastie Boys</li>
+                        <li>Fortunate Son (Weathermaker Vault Series) — Clutch</li>
+                        <li>Land of Confusion — Disturbed</li>
+                        <li>Teenage Dirtbag — Wheatus</li>
+                        <li>Little Black Submarines — The Black Keys</li>
+                        <li>American Idiot — Green Day</li>
+                        <li>Ain't Got No / I Got Life — Nina Simone</li>
+                        <li>Higher Ground (Remastered 2003) — Red Hot Chili Peppers</li>
+                        <li>Seven Nation Army — The White Stripes</li>
+                        <li>Rockin' in the Free World — Neil Young</li>
+                        <li>The Boys of Summer — The Ataris</li>
+                        <li>Death by Rock and Roll — The Pretty Reckless</li>
+                        <li>Never Let Me Down Again (LIVE SPIRITS) — Depeche Mode</li>
+                        <li>Motorcycle Emptiness — Manic Street Preachers</li>
+                        <li>Legend — The Score</li>
+                        <li>High Road Easy — Sass Jordan</li>
+                        <li>You Shook Me All Night Long (Live, duet with Anastacia) — Celine Dion</li>
+                    </ul>
+                </div>
+                <div>
+                    <iframe class="setlist-embed" src="https://open.spotify.com/embed/playlist/6EEXw8DaE5VP3GzWbFAJnK?si=HSqK4Qp9S2yLE3muMLK9iw&utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Razors Cry setlist on Spotify"></iframe>
+                    <p class="contact-line" style="margin-top:10px;">Volledige lijst op <a href="https://open.spotify.com/playlist/6EEXw8DaE5VP3GzWbFAJnK?si=HSqK4Qp9S2yLE3muMLK9iw" target="_blank" rel="noopener noreferrer">Spotify</a>.</p>
+                </div>
+            </div>
         </section>
 
         <section class="panel" aria-label="Gigs and Contact">
