@@ -258,6 +258,10 @@
                 border-top: 1px solid #30363d;
             }
 
+            .member-card {
+                min-height: auto;
+            }
+
             .member-card[open] .member-content {
                 display: block;
             }
@@ -381,9 +385,7 @@
                         <li>The Boys of Summer — The Ataris</li>
                         <li>Death by Rock and Roll — The Pretty Reckless</li>
                         <li>Never Let Me Down Again (LIVE SPIRITS) — Depeche Mode</li>
-                        <li>Motorcycle Emptiness — Manic Street Preachers</li>
                         <li>Legend — The Score</li>
-                        <li>High Road Easy — Sass Jordan</li>
                         <li>You Shook Me All Night Long (Live, duet with Anastacia) — Celine Dion</li>
                     </ul>
                 </div>
@@ -420,6 +422,18 @@
 
             memberSummaries.forEach((summary) => {
                 summary.addEventListener('click', (event) => {
+                    const card = summary.closest('.member-card');
+
+                    if (isMobile()) {
+                        event.preventDefault();
+                        const shouldOpen = !card.open;
+                        memberCards.forEach((otherCard) => {
+                            otherCard.open = false;
+                        });
+                        card.open = shouldOpen;
+                        return;
+                    }
+
                     if (!isMobile()) {
                         event.preventDefault();
                         const allOpen = memberCards.every((card) => card.open);
@@ -427,20 +441,6 @@
                             card.open = !allOpen;
                         });
                     }
-                });
-            });
-
-            memberCards.forEach((card) => {
-                card.addEventListener('toggle', () => {
-                    if (!isMobile() || !card.open) {
-                        return;
-                    }
-
-                    memberCards.forEach((otherCard) => {
-                        if (otherCard !== card) {
-                            otherCard.open = false;
-                        }
-                    });
                 });
             });
         })();
