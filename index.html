@@ -13,173 +13,361 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-			background: linear-gradient(rgba(13, 17, 23, 0.8), rgba(13, 17, 23, 0.8));
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            background: radial-gradient(circle at top, #2f1414 0%, #0d1117 45%, #06080c 100%);
+            color: #e6edf3;
+            line-height: 1.6;
         }
 
-        .container {
-            background: #161b22;
-            border-radius: 6px;
-            border: 1px solid #30363d;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 6px rgba(0, 0, 0, 0.08);
-            width: 80%;
-            max-width: 1400px;
-            overflow: hidden;
+        .site {
+            width: min(1200px, 92vw);
+            margin: 32px auto;
         }
 
-        .content {
+        .hero {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            padding: 60px;
+            grid-template-columns: 280px 1fr;
+            gap: 36px;
             align-items: center;
+            padding: 42px;
+            background: linear-gradient(145deg, #161b22 0%, #11161d 100%);
+            border: 1px solid #30363d;
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+            margin-bottom: 28px;
         }
 
-        .profile-image-container {
+        .logo-wrap {
             text-align: center;
         }
 
-        .profile-image {
-            width: 280px;
-            height: 280px;
+        .logo {
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #30363d;
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
+            border: 4px solid #8b0000;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
         }
 
-        .profile-image:hover {
-            transform: scale(1.05);
-        }
-
-        .info-box {
-            padding: 0;
-        }
-
-        .info-box h1 {
-            font-size: 2.5em;
-            color: #58a6ff;
-            margin-bottom: 10px;
+        h1 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            letter-spacing: 0.05em;
             font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: #f0f6fc;
         }
 
-        .info-box .subtitle {
-            font-size: 1.2em;
-            color: #8b949e;
+        .tagline {
+            color: #ff7b72;
+            font-size: 1.1rem;
             font-weight: 500;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
-        .info-box .location {
+        .hero p {
             color: #8b949e;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .info-box .description {
-            color: #c9d1d9;
-            line-height: 1.8;
-            margin-bottom: 25px;
-            font-size: 1.05em;
-        }
-
-        .specialties {
-            margin-bottom: 25px;
-        }
-
-        .specialties h3 {
-            color: #58a6ff;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-
-        .specialty-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tag {
-            background: #0d1117;
-            color: #58a6ff;
-            padding: 8px 14px;
-            border-radius: 16px;
-            font-size: 0.9em;
-            font-weight: 500;
-            border: 1px solid #30363d;
+            max-width: 70ch;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
+            margin-top: 22px;
+            gap: 12px;
         }
 
         .social-link {
             display: inline-block;
-            padding: 10px 20px;
-            background: #238636;
-            color: #ffffff;
+            padding: 10px 18px;
+            background: #8b0000;
+            color: #f6f8fa;
             text-decoration: none;
             border-radius: 6px;
             font-weight: 500;
             transition: all 0.2s ease;
-            cursor: pointer;
-            border: 1px solid #238636;
+            border: 1px solid #8b0000;
         }
 
         .social-link:hover {
-            background: #2ea043;
-            border-color: #2ea043;
-            transform: translateY(-1px);
-            box-shadow: 0 3px 12px rgba(35, 134, 54, 0.3);
+            background: #ad1010;
+            border-color: #ad1010;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(173, 16, 16, 0.35);
+        }
+
+        .members-title {
+            margin: 24px 0 14px;
+            color: #c9d1d9;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .members {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .member-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            overflow: hidden;
+            display: block;
+            min-height: 100%;
+        }
+
+        .member-summary {
+            list-style: none;
+            cursor: pointer;
+            pointer-events: auto;
+            display: block;
+        }
+
+        .member-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .member-photo {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #30363d;
+            display: block;
+        }
+
+        .member-content {
+            padding: 16px;
+            display: block;
+        }
+
+        .member-content h3 {
+            color: #ff7b72;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .member-content p {
+            color: #c9d1d9;
+            font-size: 0.96rem;
+        }
+
+        .panel {
+            margin-top: 24px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .panel h2 {
+            color: #ff7b72;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+        }
+
+        .gig-list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            margin: 8px 0 18px;
+        }
+
+        .gig-list li {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: #c9d1d9;
+        }
+
+        .contact-line {
+            color: #c9d1d9;
+            margin-bottom: 10px;
+        }
+
+        .contact-line a {
+            color: #ff7b72;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-line a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
-            .content {
+            .hero {
                 grid-template-columns: 1fr;
-                padding: 40px 20px;
-                gap: 30px;
+                padding: 26px 20px;
             }
 
-            .info-box h1 {
-                font-size: 2em;
+            .logo {
+                width: 190px;
+                height: 190px;
             }
 
-            .profile-image {
-                width: 220px;
-                height: 220px;
+            .members {
+                grid-template-columns: 1fr;
+            }
+
+            .member-summary {
+                cursor: pointer;
+            }
+
+            .member-photo {
+                height: 240px;
+                border-bottom: none;
+            }
+
+            .member-content {
+                display: none;
+                border-top: 1px solid #30363d;
+            }
+
+            .member-card[open] .member-content {
+                display: block;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <div class="profile-image-container">
-                <img src="logo.png" alt="Razors Cry" class="profile-image">
+    <main class="site">
+        <section class="hero">
+            <div class="logo-wrap">
+                <img src="logo.png" alt="Razors Cry logo" class="logo">
             </div>
-            <div class="info-box">
+            <div>
                 <h1>Razors Cry</h1>
-                <p class="subtitle">Rock Covers</p>
-                <p class="location">📍 The Netherlands</p>
-                
-                <p class="description">
-                     
+                <p class="tagline">Rock Covers | Nederland</p>
+                <p>
+                    Razor-scherpe riffs, donderende grooves en pure podiumenergie. Razors Cry brengt high-voltage rockcovers met een set die hard binnenkomt vanaf het eerste akkoord tot het laatste toegift.
                 </p>
-
                 <div class="social-links">
-                    <a href="https://www.instagram.com/razorscry/" class="social-link">Instagram</a>
+                    <a href="https://www.instagram.com/razorscry/" class="social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <h2 class="members-title">Band Members</h2>
+        <section class="members">
+            <details class="member-card">
+                <summary class="member-summary">
+                    <img src="image_jolanda.png" alt="Jolanda" class="member-photo">
+                </summary>
+                <div class="member-content">
+                    <h3>Jolanda — Vocals</h3>
+                    <p>Hallo daar, rock ‘n’ roll liefhebbers! Ik ben Jolanda, het gezicht van Razor’s Cry en de vrouw die zowel een Harley Davidson kan berijden als een chihuahua kan knuffelen zonder mijn stoere imago te verliezen. Ja, je hoort het goed: ik ben de zangeres die van Volbeat tot Death by Rock and Roll gaat, en die tegelijkertijd thuis op de bank ligt met mijn twee mini-wolven, die denken dat ze pitbulls zijn.</p>
+                    <p>Mijn leven is een perfecte mix van leer, laarzen, en lieve hondenhartjes. Op het podium ben ik de queen van de moshpit, maar thuis ben ik de koningin van de knuffelsessies. Als ik niet bezig ben om de speakers te laten trillen met mijn stem, dan trillen ze wel van het geblaf van mijn chihuahuas die denken dat ze mijn back-upzangers zijn.</p>
+                    <p>Dus, of je nu komt voor de headbangs, de gitaarriffs, of gewoon om te zien hoe ik mijn Harley parkeer zonder mijn chihuahuas wakker te maken, bij Razor’s Cry ben je aan het juiste adres. Laten we de boel opblazen, mensen! 🤘🐾</p>
+                </div>
+            </details>
+
+            <details class="member-card">
+                <summary class="member-summary">
+                    <img src="image_cynthia.png" alt="Cynthia" class="member-photo">
+                </summary>
+                <div class="member-content">
+                    <h3>Cynthia — Drums</h3>
+                    <p>Hoi allemaal! Ik ben Cynthia, “aanwezig” in de band voor het ritmische gedeelte. Begon mijn muzikale reis met een gitaar in de hand en een droom in het hoofd: de volgende Jimi Hendrix worden. Helaas bleek het talent voor gitaarsolo’s net zo sterk als het geduld voor snaarstemmingen—dus niet bestaand. Na talloze gefrustreerde sessies waarin ik meer snaren brak dan riffs speelde, toch maar besloten dat zes snaren gewoon te veel verantwoordelijkheid waren.</p>
+                    <p>Als drumster van de ruige rockband Razor’s Cry ram ik nu op de drums met de energie van een hyperactieve octopus op cafeïne. Mijn beukende ritmes en onnavolgbare fills zorgen ervoor dat zelfs de meest doorgewinterde headbangers hun nekspieren verrekken.</p>
+                    <p>Mijn motto? “Als je niet spelen kan, gewoon hard slaan. Dat werkt bij mij ook”</p>
+                    <p>Met mijn ontembare energie en gevoel voor ritme ben ik niet alleen het kloppende hart van Razor’s Cry, maar ook de reden dat geen enkele drumkit het langer dan drie maanden overleeft. Rock-‘n-roll in zijn puurste vorm!</p>
+                </div>
+            </details>
+
+            <details class="member-card">
+                <summary class="member-summary">
+                    <img src="image_nils.png" alt="Nils" class="member-photo">
+                </summary>
+                <div class="member-content">
+                    <h3>Nils — Guitar</h3>
+                    <p>Hallo allemaal, ik ben Nils, jullie nieuwe gitarist en officiële reden waarom de buren straks klagen over ‘gehuil’… Razor’s Cry, toch? Ik dacht eerst dat dat verwees naar het geluid van mijn gitaar na een avondje bourbon en powerchords. Maar goed: ik ben hier om jullie riffs scherper te maken dan een scheermes en jullie solos te laten huilen van jaloezie.</p>
+                    <p>Mijn inspiratie? Stel je voor dat Prince en Lenny Kravitz stiekem een kind hadden… en dat kind vervolgens opgevoed werd door een luidruchtige stofzuiger. Mijn gitaarspel is een mix tussen ‘Purple Rain’ en ‘Are You Gonna Go My Way’, maar dan gespeeld door iemand die af en toe vergeet waar de mute-knop zit.</p>
+                    <p>Fun fact: ik heb ooit een Fender Strat gesloopt tijdens een poging om ‘Kiss’ nog funkyer te coveren. Spoiler: de gitaar overleefde het, mijn ego niet. Maar maak je geen zorgen – ik beloof dat ik alleen feedback geef waar jullie letterlijk om vragen.</p>
+                    <p>Kortom: ik breng vurige solo’s, funky licks en de garantie dat onze repetities nooit saai worden. Tenzij jullie een hekel hebben aan lachende drummers en gitaarpicks die overal belanden behalve in mijn hand. Laten we razend worden… maar wel op toon, natuurlijk.” 🎸</p>
+                </div>
+            </details>
+
+            <details class="member-card">
+                <summary class="member-summary">
+                    <img src="image_tom.png" alt="Tom" class="member-photo">
+                </summary>
+                <div class="member-content">
+                    <h3>Tom — Guitar</h3>
+                    <p>Hallo allemaal, ik ben Tom, een van de gitaristen van Razor’s Cry! En ja, ik ben die gast die zijn Gibson- en Fender-gitaren met trots bespeelt, maar zijn dure effectpedalen vervoert in een plastic Netto-tasje. Want waarom zou je honderden euro’s uitgeven aan een fancy pedalboard als je ook gewoon een tasje kunt gebruiken dat eigenlijk bedoeld is voor een sixpack bier en een zak chips?</p>
+                    <p>Mijn band, Razor’s Cry, is vernoemd naar het geluid dat mijn bandgenoten maken als ik weer eens een nieuwe pedal koop en ze vragen: “Tom, heb je die echt nodig?” Natuurlijk heb ik die nodig! Hoe anders moet ik dat ene rare geluid maken dat ik één keer gebruik in het derde refrein van ons minst populaire nummer?</p>
+                    <p>Dus ja, verwacht vanavond een mix van stevige riffs, melodieuze solo’s en het geritsel van een Netto-tasje terwijl ik wanhopig probeer de juiste pedal te vinden. Laten we rocken, en onthoud: het is geen gitaarverzamelwoede, het is een levensstijl! 🎸</p>
+                </div>
+            </details>
+
+            <details class="member-card">
+                <summary class="member-summary">
+                    <img src="image_peter.png" alt="Peter" class="member-photo">
+                </summary>
+                <div class="member-content">
+                    <h3>Peter — Bass</h3>
+                    <p>Ik ben Peter, de man die stiekem denkt dat hij de backbone van de band is, maar in werkelijkheid ben ik gewoon de prutser op de vier snaar. Ja, ik ben degene die hopeloos verdwaalt tussen de noten, terwijl ik probeer te doen alsof ik weet wat ik doe. Ze noemen me ook wel de Low Tone Peerke, de Bassmaster 3000, of gewoon... die gast die altijd te hard staat.</p>
+                    <p>Mijn basgitaar is mijn trots, mijn vriend, en soms mijn ergste vijand. Want laten we eerlijk zijn: als ik een noot mis, noemt niemand het... maar als ik raak speel, hoor je het ook niet. Toch blijf ik doorgaan, want zonder mij zouden deze rockhelden klinken als een karaoke-avond zonder bier.</p>
+                    <p>Dus, zet je schrap voor een avond vol powerchords, gillende gitaren, en natuurlijk... mijn epische baslijnen. Of, zoals ik het noem: “de trillingen die je voelt, maar niet altijd hoort.”</p>
+                    <p>Razor’s Cry, let’s go! 🎸🤘</p>
+                </div>
+            </details>
+        </section>
+
+        <section class="panel" aria-label="Gigs and Contact">
+            <h2>Aankomende Optredens</h2>
+            <ul class="gig-list">
+                <li>Geen gepland</li>
+                <!-- <li>15 Mar 2026 — Loud & Local Night — Eindhoven</li>
+                <li>04 Apr 2026 — Rock in the Alley — Tilburg</li>
+                <li>26 Apr 2026 — Kingsday Afterburner — Breda</li> -->
+            </ul>
+
+            <h2>Contact</h2>
+            <p class="contact-line">Volg ons voor de laatste updates  <a href="https://www.instagram.com/razorscry/" target="_blank" rel="noopener noreferrer">Instagram</a>.</p>
+        </section>
+    </main>
+    
+    <script>
+        (function () {
+            const breakpoint = 768;
+            const memberCards = Array.from(document.querySelectorAll('.member-card'));
+            const memberSummaries = Array.from(document.querySelectorAll('.member-summary'));
+
+            function isMobile() {
+                return window.innerWidth <= breakpoint;
+            }
+
+            memberSummaries.forEach((summary) => {
+                summary.addEventListener('click', (event) => {
+                    if (!isMobile()) {
+                        event.preventDefault();
+                        const allOpen = memberCards.every((card) => card.open);
+                        memberCards.forEach((card) => {
+                            card.open = !allOpen;
+                        });
+                    }
+                });
+            });
+
+            memberCards.forEach((card) => {
+                card.addEventListener('toggle', () => {
+                    if (!isMobile() || !card.open) {
+                        return;
+                    }
+
+                    memberCards.forEach((otherCard) => {
+                        if (otherCard !== card) {
+                            otherCard.open = false;
+                        }
+                    });
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
